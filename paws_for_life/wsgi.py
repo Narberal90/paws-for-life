@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'paws_for_life.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "paws_for_life.settings")
 
 application = get_wsgi_application()

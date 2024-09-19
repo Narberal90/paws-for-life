@@ -1,1 +1,1 @@
-default_app_config = 'shelter.apps.ShelterConfig'
+default_app_config = "shelter.apps.ShelterConfig"

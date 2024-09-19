@@ -28,6 +28,9 @@ class Walk(models.Model):
         on_delete=models.CASCADE
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Animal(models.Model):
     STATUS_CHOICES = [
@@ -109,30 +112,10 @@ class Adoption(models.Model):
         ordering = ("-adoption_date",)
         constraints = [
             models.UniqueConstraint(
-                fields=['animal', 'user'],
-                name='unique_animal_user'
+                fields=["animal", "user"],
+                name="unique_animal_user"
             )
         ]
-
-    """
-     Validates the adoption request to ensure that the user does not have multiple pending adoption requests
-    for the same animal.
-     This method checks if there are any existing pending adoption requests for the same animal and user
-    combination, excluding the current instance (if it is being updated). If such a request already exists,
-    a ValidationError is raised.
-    """
-
-    def clean(self):
-        existing_adoption = Adoption.objects.filter(
-            animal=self.animal,
-            user=self.user,
-            status="pending"
-        ).exclude(pk=self.pk)
-
-        if existing_adoption.exists():
-            raise ValidationError("You already have a pending adoption request for this animal.")
-
-        super().clean()
 
     def __str__(self):
         return (f"Adoption of {self.animal.name} "

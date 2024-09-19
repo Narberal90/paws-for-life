@@ -42,14 +42,28 @@ class AnimalAdmin(admin.ModelAdmin):
         "status",
         "admission_date",
         "walk",
-
     ]
     list_filter = ["type__name"]
-    search_fields = ["name", "type__name", "age", "status", ]
+    search_fields = [
+        "name",
+        "type__name",
+        "age",
+        "status",
+    ]
 
 
 @admin.register(Adoption)
 class AdoptionAdmin(admin.ModelAdmin):
-    list_display = ['animal', 'user', 'status', 'adoption_date']
-    list_filter = ['status', 'adoption_date']
-    search_fields = ['animal__name', 'user__username']
+    list_display = ["animal", "user", "status", "adoption_date"]
+    list_filter = ["status", "adoption_date"]
+    search_fields = ["animal__name", "user__username"]
+
+
+@admin.register(Walk)
+class WalkAdmin(admin.ModelAdmin):
+    list_display = ["name", "get_animals", "date", "user", "description"]
+
+    def get_animals(self, obj):
+        return ", ".join(animal.name for animal in obj.animals.all())
+
+    get_animals.short_description = "Animals"
