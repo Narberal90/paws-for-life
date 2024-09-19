@@ -1,3 +1,48 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
-# Register your models here.
+from .models import User, Event, AnimalType, Animal, Adoption
+
+
+@admin.register(User)
+class UserAdmin(UserAdmin):
+    add_fieldsets = UserAdmin.add_fieldsets + (
+        (
+            (
+                "Additional info",
+                {
+                    "fields": (
+                        "first_name",
+                        "last_name",
+                    )
+                },
+            ),
+        )
+    )
+
+
+@admin.register(AnimalType)
+class AnimalTypeAdmin(admin.ModelAdmin):
+    list_display = ["name", "animal_count"]
+    list_filter = ["name"]
+    search_fields = ["name"]
+
+    def animal_count(self, obj):
+        return obj.animals.count()
+    animal_count.short_description = "Number of Animals"
+
+
+@admin.register(Animal)
+class AnimalAdmin(admin.ModelAdmin):
+    list_display = [
+        "name",
+        "type",
+        "age",
+        "status",
+        "admission_date",
+        "event",
+
+
+    ]
+    list_filter = ["type__name"]
+    search_fields = ["name", "type__name", "age", "status", ]
