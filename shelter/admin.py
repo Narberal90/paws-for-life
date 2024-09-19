@@ -6,6 +6,10 @@ from .models import User, Walk, AnimalType, Animal, Adoption
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
+    list_display = UserAdmin.list_display + ("phone_number",)
+    fieldsets = UserAdmin.fieldsets + (
+        (("Additional info", {"fields": ("phone_number",)}),)
+    )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (
             (
@@ -14,6 +18,7 @@ class UserAdmin(UserAdmin):
                     "fields": (
                         "first_name",
                         "last_name",
+                        "phone_number",
                     )
                 },
             ),

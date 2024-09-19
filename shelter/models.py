@@ -2,10 +2,11 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class User(AbstractUser):
-    pass
+    phone_number = PhoneNumberField(blank=True)
 
     def __str__(self):
         return self.username
