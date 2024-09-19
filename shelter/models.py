@@ -13,11 +13,12 @@ class User(AbstractUser):
 
 class AnimalType(models.Model):
     name = models.CharField(max_length=50)
+
     def __str__(self):
         return self.name
 
 
-class Event(models.Model):
+class Walk(models.Model):
     name = models.CharField(max_length=255)
     date = models.DateTimeField()
     description = models.TextField(default="unknown")
@@ -33,13 +34,12 @@ class Animal(models.Model):
         ("available", "Available"),
         ("adopted", "Adopted"),
         ("pending", "Pending"),
-        ("reserved", "Reserved"),
     ]
     name = models.CharField(max_length=255)
     age = models.IntegerField()
     type = models.ForeignKey(
         AnimalType,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="animals"
     )
     description = models.TextField(default="")
@@ -49,8 +49,8 @@ class Animal(models.Model):
         default="available"
     )
     admission_date = models.DateTimeField(auto_now_add=True)
-    event = models.ForeignKey(
-        Event,
+    walk = models.ForeignKey(
+        Walk,
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -113,6 +113,26 @@ class Adoption(models.Model):
                 name='unique_animal_user'
             )
         ]
+
+    """
+     Validates the adoption request to ensure that the user does not have multiple pending adoption requests
+    for the same animal.
+     This method checks if there are any existing pending adoption requests for the same animal and user
+    combination, excluding the current instance (if it is being updated). If such a request already exists,
+    a ValidationError is raised.
+    """
+
+    def clean(self):
+        existing_adoption = Adoption.objects.filter(
+            animal=self.animal,
+            user=self.user,
+            status="pending"
+        ).exclude(pk=self.pk)
+
+        if existing_adoption.exists():
+            raise ValidationError("You already have a pending adoption request for this animal.")
+
+        super().clean()
 
     def __str__(self):
         return (f"Adoption of {self.animal.name} "
