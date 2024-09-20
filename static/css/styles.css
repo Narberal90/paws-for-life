@@ -1,0 +1,16 @@
+body {
+    margin-top: 0;
+
+}
+
+.custom-cursor {
+    cursor: url('/static/cat_paw_print.svg'), auto;
+}
+
+.background-div {
+    background: url("/static/images/pexels-rdne-5531319.jpg") 50% 0 no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Висота div */
+    width: 100%; /* Ширина div */
+}

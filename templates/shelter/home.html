@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light background-div">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">Find your new best friend</h1>
+      <p class="lead fw-normal">Giving every tail a home</p>
+      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+
+
+
+  <main>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="avatar-container">
+            <img src="{% static 'images/pexels-lina-1741205.jpg' %}" alt="Your description" class="rounded-circle"
+                 width="200"
+                 height="200">
+          </div>
+
+          <h2>Cats</h2>
+          <p>How to care for cats, proper nutrition and more</p>
+          <br>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <div class="avatar-container">
+            <img src="{% static 'images/pexels-katlovessteve-551628.jpg' %}" alt="Your description"
+                 class="rounded-circle" width="200"
+                 height="200">
+          </div>
+
+          <h2>Dogs</h2>
+          <p>Discover the secrets to a healthy life for your pet, Learn how to raise a happy friend</p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <div class="avatar-container">
+            <img src="{% static 'images/pexels-ifaw-5486963.jpg' %}" alt="Your description"
+                 class="rounded-circle" width="200"
+                 height="200">
+          </div>
+
+          <h2>Important</h2>
+          <br>
+          <p>What to Do When You Find an Injured Animal</p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Who we are? <span
+              class="text-muted"><br><strong> Paws For Life</strong></span>
+          </h2>
+          <p class="lead">A community dedicated to ensuring every animal finds a safe, loving family</p>
+        </div>
+        <div class="col-md-5">
+         <img src="{% static 'images/new-family.jpg' %}"
+              alt="Your image description"
+              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500" height="500">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Providing shelter to those who have been left without a home and care <span class="text-muted"></span>
+          </h2>
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="{% static 'images/pexels-ifaw-5486963.jpg' %}"
+              alt="Your image description"
+              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500" height="500">
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+    
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+  </main>
+
+
+
+{% endblock %}
