@@ -1,145 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Care for Cats</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-bottom: 30px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h2 {
-            color: #007bff;
-            margin-top: 20px;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        .tips {
-            background-color: #e9ecef;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        footer {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Care for Cats</title>
+  <style>
+      
+      body {
+          font-family: Arial, sans-serif;
+          background-color: rgba(220, 236, 247, 0.35);
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+
+      header {
+          background-color: rgba(71, 120, 123, 0.95);
+          color: white;
+          text-align: center;
+          padding: 20px 0;
+          margin-bottom: 30px;
+      }
+
+      h1 {
+          margin: 0;
+          font-size: 36px;
+      }
+
+      .container {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      h2 {
+          color: rgba(71, 120, 123, 0.95);
+          margin-top: 20px;
+      }
+
+      p {
+          line-height: 1.6;
+          margin-bottom: 15px;
+      }
+
+      ul {
+          margin-left: 20px;
+      }
+
+      ul li {
+          margin-bottom: 10px;
+      }
+
+      .tips {
+          background-color: #e9ecef;
+          border-left: 5px solid rgba(71, 120, 123, 0.95);
+          padding: 15px;
+          margin-bottom: 20px;
+      }
+
+      footer {
+          background-color: rgba(71, 120, 123, 0.95);
+          color: white;
+          text-align: center;
+          padding: 10px;
+          position: relative;
+          bottom: 0;
+          width: 100%;
+      }
+
+      a {
+          color: rgba(71, 120, 123, 0.95);
+          text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>How to Care for Cats</h1>
-    <p>Proper Nutrition and More</p>
+  <h1>How to Care for Cats</h1>
+  <p>Proper Nutrition and More</p>
 </header>
 
 <div class="container">
-    <h2>1. Creating a Safe and Comfortable Environment</h2>
-    <p>Cats love to explore and can get into trouble if their environment isn't safe. To make your home cat-friendly:</p>
-    <ul>
-        <li><strong>Secure dangerous items:</strong> Keep household chemicals, small items that can be swallowed, and sharp objects out of reach.</li>
-        <li><strong>Provide space:</strong> Cats enjoy climbing, hiding, and observing. Give them cat trees, shelves, and hiding spots where they can retreat.</li>
-        <li><strong>Litter box:</strong> Place the litter box in a quiet, easily accessible location. Clean it daily to encourage consistent use.</li>
-        <li><strong>Toys and stimulation:</strong> Provide your cat with a variety of toys to keep them entertained and prevent boredom.</li>
-    </ul>
+  <button><a href="{% url 'shelter:home' %}" >Home</a></button>
+  <h2>1. Creating a Safe and Comfortable Environment</h2>
+  <p>Cats love to explore and can get into trouble if their environment isn't safe. To make your home cat-friendly:</p>
+  <ul>
+    <li><strong>Secure dangerous items:</strong> Keep household chemicals, small items that can be swallowed, and sharp
+      objects out of reach.
+    </li>
+    <li><strong>Provide space:</strong> Cats enjoy climbing, hiding, and observing. Give them cat trees, shelves, and
+      hiding spots where they can retreat.
+    </li>
+    <li><strong>Litter box:</strong> Place the litter box in a quiet, easily accessible location. Clean it daily to
+      encourage consistent use.
+    </li>
+    <li><strong>Toys and stimulation:</strong> Provide your cat with a variety of toys to keep them entertained and
+      prevent boredom.
+    </li>
+  </ul>
 
-    <h2>2. Proper Nutrition for Cats</h2>
-    <p>Nutrition is a crucial aspect of caring for your cat. A balanced diet ensures a long, healthy life.</p>
-    <div class="tips">
-        <ul>
-            <li><strong>High-quality cat food:</strong> Choose food specifically designed for cats, containing all the essential nutrients such as protein, taurine, vitamins, and fatty acids.</li>
-            <li><strong>Wet vs. dry food:</strong> Wet food provides hydration, which is crucial if your cat doesn’t drink much water. Dry food helps keep their teeth clean.</li>
-            <li><strong>Avoid human food:</strong> Some human foods are toxic to cats. Avoid giving them chocolate, onions, garlic, grapes, and caffeine.</li>
-            <li><strong>Portion control:</strong> Overfeeding can lead to obesity and related health problems. Follow the portion recommendations.</li>
-            <li><strong>Fresh water:</strong> Always provide fresh water. Some cats prefer running water, so a cat water fountain can encourage them to drink more.</li>
-        </ul>
-    </div>
-
-    <h2>3. Grooming and Hygiene</h2>
-    <p>Maintaining your cat’s hygiene is vital for their overall health.</p>
+  <h2>2. Proper Nutrition for Cats</h2>
+  <p>Nutrition is a crucial aspect of caring for your cat. A balanced diet ensures a long, healthy life.</p>
+  <div class="tips">
     <ul>
-        <li><strong>Brushing:</strong> Regular brushing removes loose fur and prevents matting, especially for long-haired breeds.</li>
-        <li><strong>Bathing:</strong> Cats generally groom themselves well and don't need frequent baths. However, if your cat gets into something dirty or sticky, a gentle bath may be necessary.</li>
-        <li><strong>Nail trimming:</strong> Trim their nails carefully every few weeks to avoid overgrowth.</li>
-        <li><strong>Dental care:</strong> Cats can suffer from dental issues. Brush their teeth regularly with cat-safe toothpaste.</li>
+      <li><strong>High-quality cat food:</strong> Choose food specifically designed for cats, containing all the
+        essential nutrients such as protein, taurine, vitamins, and fatty acids.
+      </li>
+      <li><strong>Wet vs. dry food:</strong> Wet food provides hydration, which is crucial if your cat doesn’t drink
+        much water. Dry food helps keep their teeth clean.
+      </li>
+      <li><strong>Avoid human food:</strong> Some human foods are toxic to cats. Avoid giving them chocolate, onions,
+        garlic, grapes, and caffeine.
+      </li>
+      <li><strong>Portion control:</strong> Overfeeding can lead to obesity and related health problems. Follow the
+        portion recommendations.
+      </li>
+      <li><strong>Fresh water:</strong> Always provide fresh water. Some cats prefer running water, so a cat water
+        fountain can encourage them to drink more.
+      </li>
     </ul>
+  </div>
 
-    <h2>4. Routine Health Care</h2>
-    <p>Regular vet check-ups are essential for a healthy cat. Routine healthcare includes:</p>
-    <ul>
-        <li><strong>Vaccinations:</strong> Ensure your cat receives core vaccinations.</li>
-        <li><strong>Parasite control:</strong> Use flea and tick preventatives and monitor for worms.</li>
-        <li><strong>Spaying/neutering:</strong> This helps control the cat population and can prevent behavioral and health issues.</li>
-        <li><strong>Regular check-ups:</strong> Annual vet visits are important to catch any health problems early.</li>
-    </ul>
+  <h2>3. Grooming and Hygiene</h2>
+  <p>Maintaining your cat’s hygiene is vital for their overall health.</p>
+  <ul>
+    <li><strong>Brushing:</strong> Regular brushing removes loose fur and prevents matting, especially for long-haired
+      breeds.
+    </li>
+    <li><strong>Bathing:</strong> Cats generally groom themselves well and don't need frequent baths. However, if your
+      cat gets into something dirty or sticky, a gentle bath may be necessary.
+    </li>
+    <li><strong>Nail trimming:</strong> Trim their nails carefully every few weeks to avoid overgrowth.</li>
+    <li><strong>Dental care:</strong> Cats can suffer from dental issues. Brush their teeth regularly with cat-safe
+      toothpaste.
+    </li>
+  </ul>
 
-    <h2>5. Exercise and Mental Stimulation</h2>
-    <p>Cats are naturally active and curious. Encourage them to stay fit and mentally stimulated by:</p>
-    <ul>
-        <li><strong>Interactive play:</strong> Use toys like laser pointers, feather wands, and balls to engage your cat in play.</li>
-        <li><strong>Puzzle feeders:</strong> These can make mealtimes more engaging and mentally stimulating.</li>
-        <li><strong>Scratching posts:</strong> Provide several scratching posts around your home to satisfy their need to scratch.</li>
-    </ul>
+  <h2>4. Routine Health Care</h2>
+  <p>Regular vet check-ups are essential for a healthy cat. Routine healthcare includes:</p>
+  <ul>
+    <li><strong>Vaccinations:</strong> Ensure your cat receives core vaccinations.</li>
+    <li><strong>Parasite control:</strong> Use flea and tick preventatives and monitor for worms.</li>
+    <li><strong>Spaying/neutering:</strong> This helps control the cat population and can prevent behavioral and health
+      issues.
+    </li>
+    <li><strong>Regular check-ups:</strong> Annual vet visits are important to catch any health problems early.</li>
+  </ul>
 
-    <h2>6. Understanding Cat Behavior</h2>
-    <p>Cats communicate through body language and vocalizations. Understanding their behavior helps create a strong bond:</p>
-    <ul>
-        <li><strong>Purring:</strong> Usually a sign of contentment, but can also indicate discomfort or anxiety.</li>
-        <li><strong>Hissing or growling:</strong> Signs of fear or aggression—give your cat space when they display these behaviors.</li>
-        <li><strong>Tail language:</strong> A raised tail often indicates a happy cat, while a tail puffed up or flicking can mean they're feeling threatened or annoyed.</li>
-    </ul>
+  <h2>5. Exercise and Mental Stimulation</h2>
+  <p>Cats are naturally active and curious. Encourage them to stay fit and mentally stimulated by:</p>
+  <ul>
+    <li><strong>Interactive play:</strong> Use toys like laser pointers, feather wands, and balls to engage your cat in
+      play.
+    </li>
+    <li><strong>Puzzle feeders:</strong> These can make mealtimes more engaging and mentally stimulating.</li>
+    <li><strong>Scratching posts:</strong> Provide several scratching posts around your home to satisfy their need to
+      scratch.
+    </li>
+  </ul>
 
-    <h2>7. Senior Cat Care</h2>
-    <p>As your cat ages, their needs change. Older cats may develop arthritis, dental issues, or kidney disease. To care for senior cats:</p>
-    <ul>
-        <li><strong>Provide softer bedding:</strong> Older cats may have joint pain and appreciate a soft, warm bed.</li>
-        <li><strong>Adjust diet:</strong> Senior cats often need food that's easier to digest, with different nutritional requirements.</li>
-        <li><strong>More frequent vet visits:</strong> Senior cats may need more frequent check-ups to monitor their health closely.</li>
-    </ul>
+  <h2>6. Understanding Cat Behavior</h2>
+  <p>Cats communicate through body language and vocalizations. Understanding their behavior helps create a strong
+    bond:</p>
+  <ul>
+    <li><strong>Purring:</strong> Usually a sign of contentment, but can also indicate discomfort or anxiety.</li>
+    <li><strong>Hissing or growling:</strong> Signs of fear or aggression—give your cat space when they display these
+      behaviors.
+    </li>
+    <li><strong>Tail language:</strong> A raised tail often indicates a happy cat, while a tail puffed up or flicking
+      can mean they're feeling threatened or annoyed.
+    </li>
+  </ul>
+
+  <h2>7. Senior Cat Care</h2>
+  <p>As your cat ages, their needs change. Older cats may develop arthritis, dental issues, or kidney disease. To care
+    for senior cats:</p>
+  <ul>
+    <li><strong>Provide softer bedding:</strong> Older cats may have joint pain and appreciate a soft, warm bed.</li>
+    <li><strong>Adjust diet:</strong> Senior cats often need food that's easier to digest, with different nutritional
+      requirements.
+    </li>
+    <li><strong>More frequent vet visits:</strong> Senior cats may need more frequent check-ups to monitor their health
+      closely.
+    </li>
+  </ul>
 </div>
 
 <footer>
-    <p>&copy; 2024 Cat Care Guide | All rights reserved</p>
+  <p>&copy; 2024 Cat Care Guide | All rights reserved</p>
 </footer>
 
 </body>

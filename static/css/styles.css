@@ -1,16 +1,23 @@
-body {
-    margin-top: 0;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Приховує горизонтальний скрол */
+    background-color: rgba(220, 236, 247, 0.35);
 
 }
+
 
 .custom-cursor {
     cursor: url('/static/cat_paw_print.svg'), auto;
 }
 
 .background-div {
-    background: url("/static/images/pexels-rdne-5531319.jpg") 50% 0 no-repeat fixed;
+    background: url("/static/images/pexels-rdne-5531319.jpg") left center no-repeat fixed;
     background-size: cover;
-    background-position: center;
-    height: 500px; /* Висота div */
-    width: 100%; /* Ширина div */
+    height: 520px;
+    width: 98%;
+    margin: 0;  /* Забезпечує відсутність зовнішніх відступів */
+    padding: 0; /* Забезпечує відсутність внутрішніх відступів */
 }
+
+

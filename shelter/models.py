@@ -6,21 +6,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class User(AbstractUser):
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(blank=True, null=True)
 
     def __str__(self):
         return self.username
 
 
-class AnimalType(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
 class Walk(models.Model):
-    name = models.CharField(max_length=255)
     date = models.DateTimeField()
     description = models.TextField(default="unknown")
     user = models.ForeignKey(
@@ -28,12 +20,19 @@ class Walk(models.Model):
         related_name="events",
         on_delete=models.CASCADE
     )
+    animal = models.ForeignKey(
+        "Animal",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="walks"
+    )
 
     class Meta:
         ordering = ["-date"]
 
     def __str__(self):
-        return self.name
+        return f"Walk scheduled on {self.date}"
 
 
 class Animal(models.Model):
@@ -42,12 +41,26 @@ class Animal(models.Model):
         ("adopted", "Adopted"),
         ("pending", "Pending"),
     ]
+    TYPE_CHOICES = [
+        ("cat", "Cat"),
+        ("dog", "Dog"),
+        ("others", "Others"),
+    ]
+    GENDER_CHOICES = [
+        ("boy", "Boy"),
+        ("girl", "Girl"),
+        ("unknown", "Unknown"),
+    ]
     name = models.CharField(max_length=255)
     age = models.IntegerField()
-    type = models.ForeignKey(
-        AnimalType,
-        on_delete=models.PROTECT,
-        related_name="animals"
+    type = models.CharField(
+        max_length=20,
+        choices=TYPE_CHOICES,
+    )
+    gender = models.CharField(
+        max_length=10,
+        choices=GENDER_CHOICES,
+        default="unknown"
     )
     description = models.TextField(default="")
     status = models.CharField(
@@ -84,7 +97,7 @@ class Animal(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.type.name} {self.name}"
+        return f"{self.type} {self.name} ({self.gender})"
 
 
 class Adoption(models.Model):

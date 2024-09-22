@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        {% for animal in other_animal_list %}
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card mb-4">
-                <!-- Велике зображення -->
-                <img src="{{ animal.photo.url }}" class="card-img-top" alt="{{ animal.name }}">
+<div class="container my-5">
+  <div class="row">
+    {% for animal in other_animal_list %}
+      <div class="col-12 mb-5">
+        <div class="card h-100" style="border: none;">
+          <!-- Велике зображення тварини -->
+         <img class="card-img-top img-fluid" src="{% static 'images/horse.jpg' %}" alt="{{ animal.name }}" style="max-height: 500px; object-fit: cover;">  {#  animal.photo.url#}
 
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ animal.name }}</h5>
-                    <p class="card-text">{{ animal.get_type_display }} / {{ animal.age }} year{{ animal.age|pluralize }}</p>
-                    <p class="card-text">{{ animal.get_gender_display }}</p>
 
-                    <!-- Посилання на детальну сторінку -->
-                    <a href="#" class="btn btn-primary">More info</a>
-                </div>
-            </div>
+            <!-- Інформація про тварину -->
+            <p class="card-title" style="font-size: 24px;text-align: center">{{ animal.name }}</p>
+
         </div>
-        {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

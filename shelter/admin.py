@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User, Walk, AnimalType, Animal, Adoption
+from .models import User, Walk, Animal, Adoption
 
 
 @admin.register(User)
@@ -26,32 +26,22 @@ class UserAdmin(UserAdmin):
     )
 
 
-@admin.register(AnimalType)
-class AnimalTypeAdmin(admin.ModelAdmin):
-    list_display = ["name", "animal_count"]
-    list_filter = ["name"]
-    search_fields = ["name"]
-
-    def animal_count(self, obj):
-        return obj.animals.count()
-
-    animal_count.short_description = "Number of Animals"
-
-
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "type",
+        "gender",
         "age",
         "status",
         "admission_date",
         "walk",
     ]
-    list_filter = ["type__name"]
+    list_filter = ["type", "gender"]
     search_fields = [
         "name",
-        "type__name",
+        "type",
+        "gender",
         "age",
         "status",
     ]
@@ -66,9 +56,10 @@ class AdoptionAdmin(admin.ModelAdmin):
 
 @admin.register(Walk)
 class WalkAdmin(admin.ModelAdmin):
-    list_display = ["name", "get_animals", "date", "user", "description"]
+    list_display = ["animal", "date", "user", "description"]
+    fields = ["date", "user", "description", "animal"]  # Включити поле тварини
 
-    def get_animals(self, obj):
-        return ", ".join(animal.name for animal in obj.animals.all())
 
-    get_animals.short_description = "Animals"
+
+
+

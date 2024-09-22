@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container marketing" style="background-color: rgba(170,176,174,0.15); margin-top: 50px;">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h1 class="featurette-heading">Actual <br> help <span
+            class="text-muted"><br> <h4>In addition to financial support,br you can also help us in many other ways, which we will outline below!</h4></span>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'images/start-help.jpg' %}"
+             alt="Your image description"
+             class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Dog walking <br>
+          <span class="text-muted">You can come and walk with our dogs! The walk is held every day from 10:00 a.m. to 5:00 p.m.!  </span>
+        </h2>
+        <p class="lead"></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="{% static 'images/dog-walking.jpg' %}"
+             alt="Your image description"
+             class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="500">
+      </div>
+    </div>
+
+        <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h1 class="featurette-heading">Need for products <span
+            class="text-muted"><br> <h4>Our wards have a very varied diet, so we would be glad if you could help with the purchase of products for them.</h4></span>
+        </h1>
+        <ul>
+          <h4>We need:</h4>
+          <li>chicken</li>
+          <li>fruits and vegetables</li>
+          <li>dry food for cats and dogs</li>
+          <li>small fish</li>
+          <li>grain (corn, oats, wheat, millet, rye, sunflower seeds, buckwheat, rice, millet)</li>
+          <li>dried fruits (raisins, dried apricots, dates)</li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <img src="{% static 'images/animal-food.jpg' %}"
+             alt="Your image description"
+             class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+  </main>
+
+{% endblock %}

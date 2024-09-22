@@ -6,7 +6,7 @@
     <div class="col-md-5 p-lg-5 mx-auto my-5">
       <h1 class="display-4 fw-normal">Find your new best friend</h1>
       <p class="lead fw-normal">Giving every tail a home</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+      <a class="btn btn-outline-secondary" href="{% url 'shelter:animals-list-for-adoption' %}">Give a Home</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -37,7 +37,7 @@
           <h2>Cats</h2>
           <p>How to care for cats, proper nutrition and more</p>
           <br>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-cats' %}">View details »</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
@@ -49,7 +49,7 @@
 
           <h2>Dogs</h2>
           <p>Discover the secrets to a healthy life for your pet, Learn how to raise a happy friend</p>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-dogs' %}">View details »</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
@@ -62,7 +62,7 @@
           <h2>Important</h2>
           <br>
           <p>What to Do When You Find an Injured Animal</p>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-injured-animals' %}">View details »</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -112,7 +112,7 @@
       <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->
-
+    
 
     <!-- FOOTER -->
     <footer class="container">
