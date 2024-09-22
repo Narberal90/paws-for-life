@@ -1,10 +1,9 @@
-
 {% load static %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
@@ -68,49 +67,56 @@
             width: 100%;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<header>
+  <header>
     <h1>About Us</h1>
     <p>Your Guide to Understanding Our Mission</p>
-</header>
+  </header>
 
-<div class="container">
-    <button><a href="{% url 'shelter:home' %}" >Home</a></button>
+  <div class="container">
+    <button><a href="{% url 'shelter:home' %}">Home</a></button>
 
     <h2>Welcome to Paws for Life</h2>
-    <p>A dedicated animal shelter committed to giving every animal a loving home. Our mission is to rescue, rehabilitate, and rehome animals in need, ensuring that every furry friend finds a safe and nurturing environment.</p>
+    <p>A dedicated animal shelter committed to giving every animal a loving home. Our mission is to rescue,
+      rehabilitate, and rehome animals in need, ensuring that every furry friend finds a safe and nurturing
+      environment.</p>
 
     <h3>Our Story</h3>
-    <p>Founded in [1990], Paws for Life was born out of a passion for animal welfare. Our founder, [Narberal], started this journey after witnessing the plight of homeless animals in our community. With the help of dedicated volunteers and generous supporters, we have grown from a small rescue operation to a fully-fledged shelter that has helped thousands of animals find their forever homes.</p>
+    <p>Founded in [1990], Paws for Life was born out of a passion for animal welfare. Our founder, [Narberal], started
+      this journey after witnessing the plight of homeless animals in our community. With the help of dedicated
+      volunteers and generous supporters, we have grown from a small rescue operation to a fully-fledged shelter that
+      has helped thousands of animals find their forever homes.</p>
 
     <h3>Our Mission</h3>
     <ul>
-        <li>Rescue abandoned and abused animals</li>
-        <li>Provide medical care and rehabilitation</li>
-        <li>Educate the community about responsible pet ownership</li>
-        <li>Promote adoption as the best option for finding homes for our animals</li>
+      <li>Rescue abandoned and abused animals</li>
+      <li>Provide medical care and rehabilitation</li>
+      <li>Educate the community about responsible pet ownership</li>
+      <li>Promote adoption as the best option for finding homes for our animals</li>
     </ul>
 
     <h3>Our Team</h3>
-    <p>Our team consists of passionate animal lovers, including veterinarians, trainers, and volunteers. Each member plays a crucial role in the well-being of our animals, ensuring they receive the care, love, and attention they need.</p>
+    <p>Our team consists of passionate animal lovers, including veterinarians, trainers, and volunteers. Each member
+      plays a crucial role in the well-being of our animals, ensuring they receive the care, love, and attention they
+      need.</p>
 
     <h3>Get Involved</h3>
     <p>We invite you to join us in our mission! There are many ways you can help:</p>
     <ul>
-        <li><strong>Adopt:</strong> Give a homeless animal a loving forever home.</li>
-        <li><strong>Volunteer:</strong> Share your time and skills to help us care for our animals.</li>
-        <li><strong>Donate:</strong> Your contributions help us provide food, shelter, and medical care.</li>
+      <li><strong>Adopt:</strong> Give a homeless animal a loving forever home.</li>
+      <li><strong>Volunteer:</strong> Share your time and skills to help us care for our animals.</li>
+      <li><strong>Donate:</strong> Your contributions help us provide food, shelter, and medical care.</li>
     </ul>
 
     <p>Together, we can make a difference in the lives of countless animals. Thank you for your support!</p>
-</div>
+  </div>
 
-<footer>
+  <footer>
     <p>&copy; 2024 Paws for Life | All rights reserved</p>
-</footer>
+  </footer>
 
-</body>
-</html>
+  </body>
+  </html>
 {% endblock %}

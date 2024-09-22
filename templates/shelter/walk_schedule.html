@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="container">
-    <h2>Schedule a Walk</h2> <!-- Змінено заголовок -->
+    <h2>Schedule a Walk</h2>
     <form method="post" action="" novalidate>
       {% csrf_token %}
       {{ form.as_p }}
@@ -18,7 +18,7 @@
               const selectedDate = new Date(dateInput.value);
               const hours = selectedDate.getHours();
 
-           
+
               if (hours < 10 || hours > 17) {
                   alert('Please select a time between 10:00 and 17:00.');
                   dateInput.value = '';

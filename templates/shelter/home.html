@@ -11,24 +11,21 @@
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     <br><br><br><br>
-      <div class="d-flex justify-content-around mt-5">
+    <div class="d-flex justify-content-around mt-5">
       <div class="text-center">
         <h2 class="display-3 " style="font-weight: 500;">{{ total_animals }}</h2>
         <p class="lead" style="font-weight: 500;">Total Animals</p>
       </div>
       <div class="text-center">
         <h2 class="display-3" style="font-weight: 500;">{{ adopted_count }}</h2>
-        <p class="lead"style="font-weight: 500;">Found their family</p>
+        <p class="lead" style="font-weight: 500;">Found their family</p>
       </div>
       <div class="text-center">
-        <h2 class="display-3"style="font-weight: 500;">{{ available_count }}</h2>
-        <p class="lead"style="font-weight: 500;">Available for Adoption</p>
+        <h2 class="display-3" style="font-weight: 500;">{{ available_count }}</h2>
+        <p class="lead" style="font-weight: 500;">Available for Adoption</p>
       </div>
     </div>
   </div>
-
-
-
 
   <main>
 
@@ -77,7 +74,8 @@
           <h2>Important</h2>
           <br>
           <p>What to Do When You Find an Injured Animal</p>
-          <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-injured-animals' %}">View details »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-injured-animals' %}">View details »</a>
+          </p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -94,10 +92,10 @@
           <p class="lead">A community dedicated to ensuring every animal finds a safe, loving family</p>
         </div>
         <div class="col-md-5">
-         <img src="{% static 'images/new-family.jpg' %}"
-              alt="Your image description"
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500" height="500">
+          <img src="{% static 'images/new-family.jpg' %}"
+               alt="Your image description"
+               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+               width="500" height="500">
         </div>
       </div>
 
@@ -105,29 +103,29 @@
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Providing shelter to those who have been left without a home and care <span class="text-muted"></span>
+          <h2 class="featurette-heading">Providing shelter to those who have been left without a home and care <span
+              class="text-muted"></span>
           </h2>
           <p class="lead"></p>
         </div>
         <div class="col-md-5 order-md-1">
           <img src="{% static 'images/pexels-ifaw-5486963.jpg' %}"
-              alt="Your image description"
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500" height="500">
+               alt="Your image description"
+               class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+               width="500" height="500">
 
         </div>
       </div>
 
       <hr class="featurette-divider">
 
-    
 
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->
-    
+
 
     <!-- FOOTER -->
     <footer class="container">
@@ -135,7 +133,5 @@
       <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
   </main>
-
-
-
+  
 {% endblock %}

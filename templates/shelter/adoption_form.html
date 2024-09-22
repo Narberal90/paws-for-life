@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h2>Adopt {{ animal.name }}</h2> <!-- Заголовок з іменем тварини -->
+  <div class="container">
+    <h2>Adopt {{ animal.name }}</h2>
     <form method="post" action="" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit Adoption Request</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit Adoption Request</button>
     </form>
-</div>
+  </div>
 {% endblock %}

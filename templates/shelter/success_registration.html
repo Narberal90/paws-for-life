@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container text-center my-5">
+  <div class="container text-center my-5">
     <h1 class="display-4" style="color: #4CAF50;">Registration was successful!</h1>
     <p class="lead" style="font-size: 1.2em;">Thank you!</p>
     <p style="margin-top: 20px;">Now you can register for a walk with a dog or adopt an animal!</p>
-    <a href="{% url 'shelter:home' %}" class="btn btn-primary mt-4" style="background-color: #007BFF; border-color: #007BFF;">Go to Home</a>
-</div>
+    <a href="{% url 'shelter:home' %}" class="btn btn-primary mt-4"
+       style="background-color: #007BFF; border-color: #007BFF;">Go to Home</a>
+  </div>
 {% endblock %}
