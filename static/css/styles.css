@@ -7,14 +7,14 @@ html, body {
 }
 
 
-.custom-cursor {
-    cursor: url('/static/cat_paw_print.svg'), auto;
-}
+/*.custom-cursor {*/
+/*    cursor: url('/static/cat_paw_print.svg'), auto;*/
+/*}*/
 
 .background-div {
     background: url("/static/images/pexels-rdne-5531319.jpg") left center no-repeat fixed;
     background-size: cover;
-    height: 520px;
+    height: 820px;
     width: 98%;
     margin: 0;  /* Забезпечує відсутність зовнішніх відступів */
     padding: 0; /* Забезпечує відсутність внутрішніх відступів */

@@ -7,9 +7,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
 
-from shelter.forms import WalkScheduleForm, AdoptionForm
-from shelter.models import Animal, Walk, Adoption
+from shelter.forms import WalkScheduleForm, AdoptionForm, UserProfileForm
+from shelter.models import Walk, Adoption, User
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
+from .models import Animal
 
 
 class HomePageView(generic.TemplateView):
@@ -23,6 +24,12 @@ class HomePageView(generic.TemplateView):
             .objects
             .filter(status="adopted").count()
         )
+        context["available_count"] = (
+            Animal
+            .objects
+            .filter(status="available", type="dog").count()
+        )
+
         return context
 
 
@@ -103,7 +110,7 @@ class AnimalAdoptableDetailView(generic.DetailView):
     template_name = "shelter/animal_adoptable_detail.html"
 
 
-class AdoptionCreateView(generic.CreateView):
+class AdoptionCreateView(LoginRequiredMixin, generic.CreateView):
     model = Adoption
     form_class = AdoptionForm
     template_name = "shelter/adoption_form.html"
@@ -124,7 +131,16 @@ class AdoptionCreateView(generic.CreateView):
             form.add_error(
                 None,
                 "You have already submitted "
-                "an adoption request for this animal.")
+                "an adoption request for this animal."
+            )
+            return self.form_invalid(form)
+
+        if not self.request.user.phone_number:
+            form.add_error(
+                None,
+                "You must provide a phone number "
+                "to submit your adoption request."
+            )
             return self.form_invalid(form)
 
         form.instance.animal = get_object_or_404(Animal, id=animal_pk)
@@ -157,10 +173,37 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("shelter:success")
+            return redirect("shelter:success-registration")
     else:
         form = CustomUserCreationForm()
     return render(request, "registration/register.html", {"form": form})
+
+
+class SuccessRegistrationView(generic.TemplateView):
+    template_name = "shelter/success_registration.html"
+
+
+# profile
+
+class UserProfileView(LoginRequiredMixin, generic.TemplateView):
+    template_name = "shelter/user_profile.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
+
+
+class EditProfileView(LoginRequiredMixin, generic.UpdateView):
+    model = User
+    form_class = UserProfileForm
+    template_name = "shelter/edit_profile.html"
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_success_url(self):
+        return reverse('shelter:user-profile')
 
 
 # articles
@@ -185,3 +228,7 @@ def article_about_injured_animals(request: HttpRequest) -> HttpResponse:
         request,
         "shelter/article_about_injured_animals.html"
     )
+
+
+class AboutUsView(generic.TemplateView):
+    template_name = "shelter/about_us.html"

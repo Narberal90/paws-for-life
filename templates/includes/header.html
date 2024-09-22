@@ -3,9 +3,7 @@
     <div class="d-flex flex-wrap align-items-center justify-content-between">
       <!-- justify-content-between додає рівномірний розподіл -->
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="62" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
+
       </a>
 
       <ul class="nav col-12 col-lg-auto mb-2 justify-content-between mb-md-0"> <!-- justify-content-between -->
@@ -13,17 +11,21 @@
         <li><a href="{% url 'shelter:help-list' %}" class="nav-link px-2 text-white">How Can I Help</a></li>
         <li><a href="{% url 'shelter:other-animals' %}" class="nav-link px-2 text-white">Other Our Pets</a></li>
         <li><a href="{% url 'shelter:dog-list' %}" class="nav-link px-2 text-white">Walk a Pet</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About Us</a></li>
+        <li><a href="{% url 'shelter:about-us' %}" class="nav-link px-2 text-white">About Us</a></li>
       </ul>
+
 <div class="text-end">
     {% if user.is_authenticated %}
-        <form method="POST" action="{% url 'logout' %}">
+        <form method="POST" action="{% url 'logout' %}" class="d-inline">
             {% csrf_token %}
             <button type="submit" class="btn btn-outline-light me-2">Logout</button>
         </form>
+        <a href="{% url 'shelter:user-profile' %}" class="me-2">
+            <button type="button" class="btn btn-outline-light">Profile</button>
+        </a>
     {% else %}
-        <a href="{% url 'login' %}">
-            <button type="button" class="btn btn-outline-light me-2">Login</button>
+        <a href="{% url 'login' %}" class="me-2">
+            <button type="button" class="btn btn-outline-light">Login</button>
         </a>
         <a href="{% url 'register' %}">
             <button type="button" class="btn btn-warning">Sign-up</button>

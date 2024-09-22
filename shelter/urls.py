@@ -13,7 +13,11 @@ from .views import (
     SuccessAdoptionView,
     article_about_cat,
     article_about_dogs,
-    article_about_injured_animals
+    article_about_injured_animals,
+    UserProfileView,
+    EditProfileView,
+    AboutUsView,
+    SuccessRegistrationView
 )
 
 urlpatterns = [
@@ -60,6 +64,11 @@ urlpatterns = [
         name="success"
     ),
     path(
+        "success-registration/",
+        SuccessRegistrationView.as_view(),
+        name="success-registration"
+    ),
+    path(
         "article-about-cats/",
         article_about_cat,
         name="article-about-cats"
@@ -74,6 +83,18 @@ urlpatterns = [
         article_about_injured_animals,
         name="article-about-injured-animals"
     ),
+    path("about/", AboutUsView.as_view(), name="about-us"),
+    path(
+        "user/profile/",
+        UserProfileView.as_view(),
+        name="user-profile"
+    ),
+    path(
+        "user/profile/edit/",
+        EditProfileView.as_view(),
+        name="edit-profile"
+    ),
+
 ]
 
 app_name = "shelter"

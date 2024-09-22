@@ -49,9 +49,20 @@ class AnimalAdmin(admin.ModelAdmin):
 
 @admin.register(Adoption)
 class AdoptionAdmin(admin.ModelAdmin):
-    list_display = ["animal", "user", "status", "adoption_date"]
+    list_display = [
+        "animal",
+        "user",
+        "status",
+        "adoption_date",
+        "get_user_number"
+    ]
     list_filter = ["status", "adoption_date"]
     search_fields = ["animal__name", "user__username"]
+
+    def get_user_number(self, obj):
+        return obj.user.phone_number
+
+    get_user_number.short_description = 'User Phone Number'
 
 
 @admin.register(Walk)
