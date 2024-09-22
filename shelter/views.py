@@ -18,7 +18,11 @@ class HomePageView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["total_animals"] = Animal.objects.count()
-        context["adopted_count"] = Animal.objects.filter(status="adopted").count()
+        context["adopted_count"] = (
+            Animal
+            .objects
+            .filter(status="adopted").count()
+        )
         return context
 
 
@@ -28,15 +32,19 @@ def help_list(request: HttpRequest) -> HttpResponse:
 
 class AnimalListView(generic.ListView):
     model = Animal
-    template_name = 'shelter/animals_list_for_adoption.html'
+    template_name = "shelter/animals_list_for_adoption.html"
     paginate_by = 6
 
     def get_queryset(self):
-        queryset = Animal.objects.filter(status='available', type__in=['cat', 'dog'])
+        queryset = (
+            Animal
+            .objects
+            .filter(status="available", type__in=["cat", "dog"])
+        )
 
-        gender = self.request.GET.get('gender')
-        age = self.request.GET.get('age')
-        animal_type = self.request.GET.get('type')
+        gender = self.request.GET.get("gender")
+        age = self.request.GET.get("age")
+        animal_type = self.request.GET.get("type")
 
         if gender:
             queryset = queryset.filter(gender=gender)
@@ -54,7 +62,7 @@ class OtherAnimalsListView(generic.ListView):
     context_object_name = "other_animal_list"
 
     def get_queryset(self):
-        return Animal.objects.exclude(type__in=['cat', 'dog'])
+        return Animal.objects.exclude(type__in=["cat", "dog"])
 
 
 class DogListView(generic.ListView):
@@ -62,105 +70,118 @@ class DogListView(generic.ListView):
     template_name = "shelter/dog_list.html"
     paginate_by = 8
 
-
     def get_queryset(self):
-        return Animal.objects.filter(type='dog', status='available')
+        return Animal.objects.filter(type="dog", status="available")
 
 
 class ScheduleWalkView(LoginRequiredMixin, generic.CreateView):
     model = Walk
     form_class = WalkScheduleForm
-    template_name = 'shelter/walk_schedule.html'
+    template_name = "shelter/walk_schedule.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        dog_pk = self.kwargs.get('dog_pk')
-        context['dog'] = get_object_or_404(Animal, id=dog_pk)
+        dog_pk = self.kwargs.get("dog_pk")
+        context["dog"] = get_object_or_404(Animal, id=dog_pk)
         return context
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        form.instance.animal = self.get_context_data()['dog']  # Додаємо собаку до прогулянки
+        form.instance.animal = self.get_context_data()["dog"]
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('shelter:success')
+        return reverse("shelter:success")
+
 
 class SuccessView(generic.TemplateView):
-    template_name = 'shelter/success.html'
+    template_name = "shelter/success.html"
+
 
 class AnimalAdoptableDetailView(generic.DetailView):
     model = Animal
     template_name = "shelter/animal_adoptable_detail.html"
 
 
-
-
-
 class AdoptionCreateView(generic.CreateView):
     model = Adoption
     form_class = AdoptionForm
-    template_name = 'shelter/adoption_form.html'  # Назва вашого шаблону
+    template_name = "shelter/adoption_form.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        animal_pk = self.kwargs.get('animal_pk')
-        context['animal'] = get_object_or_404(Animal, id=animal_pk)
+        animal_pk = self.kwargs.get("animal_pk")
+        context["animal"] = get_object_or_404(Animal, id=animal_pk)
         return context
 
     def form_valid(self, form):
-        animal_pk = self.kwargs.get('animal_pk')
+        animal_pk = self.kwargs.get("animal_pk")
 
-        # Перевірка наявності заявки
-        if Adoption.objects.filter(animal_id=animal_pk, user=self.request.user).exists():
-            form.add_error(None, "You have already submitted an adoption request for this animal.")
+        if Adoption.objects.filter(
+            animal_id=animal_pk,
+            user=self.request.user
+        ).exists():
+            form.add_error(
+                None,
+                "You have already submitted "
+                "an adoption request for this animal.")
             return self.form_invalid(form)
 
-        # Додаємо тварину та користувача до заявки
         form.instance.animal = get_object_or_404(Animal, id=animal_pk)
         form.instance.user = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('shelter:success-adoption')
+        return reverse("shelter:success-adoption")
+
 
 class SuccessAdoptionView(generic.TemplateView):
-    template_name ='shelter/success_adoption.html'
+    template_name = "shelter/success_adoption.html"
 
 
-#view for register login and logout
-
+# view for register login and logout
 
 
 class CustomLoginView(LoginView):
     form_class = CustomAuthenticationForm
-    template_name = 'registration/login.html'
+    template_name = "registration/login.html"
+
 
 class CustomLogoutView(LogoutView):
-    template_name = 'registration/logged_out.html'
+    template_name = "registration/logged_out.html"
+
 
 def register(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('shelter:success')
+            return redirect("shelter:success")
     else:
         form = CustomUserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, "registration/register.html", {"form": form})
 
 
 # articles
 
 
-def article_about_cat(request):
-    return render(request, 'shelter/article_about_cats.html')
+def article_about_cat(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "shelter/article_about_cats.html"
+    )
 
 
-def article_about_dogs(request):
-    return render(request, 'shelter/article_about_dogs.html')
+def article_about_dogs(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "shelter/article_about_dogs.html"
+    )
 
 
-def article_about_injured_animals(request):
-    return render(request, 'shelter/article_about_injured_animals.html')
+def article_about_injured_animals(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "shelter/article_about_injured_animals.html"
+    )

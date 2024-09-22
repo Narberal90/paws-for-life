@@ -80,9 +80,9 @@ class Animal(models.Model):
     def clean(self):
         super().clean()
         if self.age < 0:
-            raise ValidationError({'age': 'Age cannot be negative.'})
+            raise ValidationError({"age": "Age cannot be negative."})
         if not self.name:
-            raise ValidationError({'name': 'Name cannot be empty.'})
+            raise ValidationError({"name": "Name cannot be empty."})
 
     def save(self, *args, **kwargs):
         self.clean()

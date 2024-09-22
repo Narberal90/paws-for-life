@@ -57,9 +57,4 @@ class AdoptionAdmin(admin.ModelAdmin):
 @admin.register(Walk)
 class WalkAdmin(admin.ModelAdmin):
     list_display = ["animal", "date", "user", "description"]
-    fields = ["date", "user", "description", "animal"]  # Включити поле тварини
-
-
-
-
-
+    fields = ["date", "user", "description", "animal"]
