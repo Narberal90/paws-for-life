@@ -9,8 +9,13 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import os
 from pathlib import Path
+
+import cloudinary
+import cloudinary.api
+import cloudinary.uploader
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,9 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Cloudinary imports
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 
 # Quick-start development settings - unsuitable for production
@@ -120,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (BASE_DIR / "static",)
 
@@ -141,8 +143,7 @@ LOGIN_URL = "login"
 # Cloudinary - Django - integration
 
 cloudinary.config(
-
-    cloud_name = "dify863hs",
-    api_key = "522328199251598",
-    api_secret = "vFGnmi_O2zCZdV0FNuaxCaolG2o",
+    cloud_name="dify863hs",
+    api_key="522328199251598",
+    api_secret="vFGnmi_O2zCZdV0FNuaxCaolG2o",
 )
