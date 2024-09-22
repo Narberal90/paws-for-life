@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Schedule a Walk with {{ object.name }}</h2> <!-- Використовуйте object для доступу до собаки -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Schedule Walk</button>
+    </form>
+</div>
+{% endblock %}
