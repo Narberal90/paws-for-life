@@ -8,8 +8,8 @@
         <div class="col-12 mb-5">
           <div class="card h-100" style="border: none;">
 
-            <img class="card-img-top img-fluid" src="{% static 'images/horse.jpg' %}" alt="{{ animal.name }}"
-                 style="max-height: 500px; object-fit: cover;"> {#  animal.photo.url#}
+            <img class="card-img-top img-fluid" src="{{ animal.image.url }}" alt="{{ animal.name }}"
+                 style="object-fit: cover;">
 
             <p class="card-title" style="font-size: 24px;text-align: center">{{ animal.name }}</p>
 

@@ -4,6 +4,8 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
+from cloudinary.models import CloudinaryField
+
 
 class User(AbstractUser):
     phone_number = PhoneNumberField(blank=True, null=True)
@@ -75,6 +77,11 @@ class Animal(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
         related_name="animals"
+    )
+    image = CloudinaryField(
+        "image",
+        blank=True,
+        null=True,
     )
 
     def clean(self):

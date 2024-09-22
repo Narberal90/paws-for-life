@@ -15,6 +15,14 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Cloudinary imports
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -37,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "shelter",
     "phonenumber_field",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +136,13 @@ AUTH_USER_MODEL = "shelter.User"
 LOGIN_REDIRECT_URL = "/"
 
 LOGIN_URL = "login"
+
+
+# Cloudinary - Django - integration
+
+cloudinary.config(
+
+    cloud_name = "dify863hs",
+    api_key = "522328199251598",
+    api_secret = "vFGnmi_O2zCZdV0FNuaxCaolG2o",
+)

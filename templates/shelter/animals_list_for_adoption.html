@@ -31,9 +31,11 @@
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
           <div class="card mb-4">
             <a href="{% url 'shelter:animal-adoptable-detail' animal.id %}">
-              <img class="card-img-top" src="https://via.placeholder.com/150" alt="{{ animal.name }}">
+              <img class="card-img-top"
+                   src="{{ animal.image.url|default:'https://via.placeholder.com/150' }}"
+                   alt="Image of {{ animal.name|default:'a pet' }}">
               <div class="card-body">
-                <h2 class="h4 card-title">{{ animal.name }}</h2>
+                <h3 class="h4 card-title">{{ animal.name }}</h3>
                 <h4 class="card-text text-muted">{{ animal.get_gender_display }} / {{ animal.age }}
                   year{{ animal.age|pluralize }}</h4>
               </div>
