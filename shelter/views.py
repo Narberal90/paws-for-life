@@ -82,7 +82,16 @@ class DogListView(generic.ListView):
     paginate_by = 8
 
     def get_queryset(self):
-        return Animal.objects.filter(type="dog", status="available")
+        queryset = Animal.objects.filter(type="dog", status="available")
+        gender = self.request.GET.get("gender")
+        age = self.request.GET.get("age")
+
+        if gender:
+            queryset = queryset.filter(gender=gender)
+        if age:
+            queryset = queryset.filter(age=age)
+
+        return queryset
 
 
 class ScheduleWalkView(LoginRequiredMixin, generic.CreateView):
