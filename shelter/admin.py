@@ -62,7 +62,7 @@ class AdoptionAdmin(admin.ModelAdmin):
     def get_user_number(self, obj):
         return obj.user.phone_number
 
-    get_user_number.short_description = 'User Phone Number'
+    get_user_number.short_description = "User Phone Number"
 
 
 @admin.register(Walk)

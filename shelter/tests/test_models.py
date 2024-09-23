@@ -28,13 +28,16 @@ class AnimalModelTest(TestCase):
         )
         self.animal = Animal.objects.create(
             name="Buddy",
-            age=3, type="dog",
+            age=3,
+            type="dog",
             gender="boy",
             description="Friendly dog"
         )
 
     def test_animal_str(self):
-        self.assertEqual(str(self.animal), "dog Buddy (boy)")
+        self.assertEqual(
+            str(self.animal), "dog Buddy (boy)"
+        )
 
     def test_animal_age_cannot_be_negative(self):
         with self.assertRaises(ValidationError):
@@ -64,7 +67,8 @@ class AdoptionModelTest(TestCase):
         )
         self.animal = Animal.objects.create(
             name="Buddy",
-            age=3, type="dog",
+            age=3,
+            type="dog",
             gender="boy",
             description="Friendly dog"
         )
@@ -74,12 +78,18 @@ class AdoptionModelTest(TestCase):
         )
 
     def test_adoption_str(self):
-        self.assertIn("Adoption of Buddy", str(self.adoption))
+        self.assertIn(
+            "Adoption of Buddy",
+            str(self.adoption)
+        )
 
     def test_unique_adoption_constraint(self):
         with transaction.atomic():
             with self.assertRaises(Exception):
-                Adoption.objects.create(animal=self.animal, user=self.user)
+                Adoption.objects.create(
+                    animal=self.animal,
+                    user=self.user
+                )
 
         with transaction.atomic():
             new_animal = Animal.objects.create(
@@ -124,4 +134,5 @@ class WalkModelTest(TestCase):
     def test_walk_str(self):
         self.assertEqual(
             str(self.walk),
-            "Walk scheduled on 2024-09-30T10:00:00Z")
+            "Walk scheduled on 2024-09-30T10:00:00Z"
+        )

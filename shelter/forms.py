@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 from phonenumber_field.formfields import PhoneNumberField
 
@@ -33,6 +34,19 @@ class WalkScheduleForm(forms.ModelForm):
         tomorrow = today + timezone.timedelta(days=1)
         self.fields["date"].widget.attrs["min"] = f"{today}T10:00"
         self.fields["date"].widget.attrs["max"] = f"{tomorrow}T17:00"
+
+    def clean_date(self):
+        date = self.cleaned_data.get("date")
+        if date:
+            if date < timezone.now():
+                raise ValidationError("The date cannot be in the past.")
+
+            if date.hour < 10 or date.hour > 17:
+                raise ValidationError(
+                    "Please select a time between 10:00 and 17:00."
+                )
+
+        return date
 
 
 class AdoptionForm(forms.ModelForm):

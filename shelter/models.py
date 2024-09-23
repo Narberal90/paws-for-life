@@ -86,7 +86,7 @@ class Animal(models.Model):
 
     def clean(self):
         super().clean()
-        if self.age < 0:
+        if self.age is not None and self.age < 0:
             raise ValidationError({"age": "Age cannot be negative."})
         if not self.name:
             raise ValidationError({"name": "Name cannot be empty."})
@@ -95,7 +95,6 @@ class Animal(models.Model):
         self.clean()
         super().save(*args, **kwargs)
 
-    # TODO: add photo = models.ImageField()
     class Meta:
         ordering = ("name",)
         indexes = [
