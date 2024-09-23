@@ -8,7 +8,7 @@ from .views import (
     AnimalAdoptableDetailView,
     DogListView,
     ScheduleWalkView,
-    SuccessView,
+    SuccessWalkView,
     AdoptionCreateView,
     SuccessAdoptionView,
     article_about_cat,
@@ -59,9 +59,9 @@ urlpatterns = [
         name="success-adoption"
     ),
     path(
-        "success/",
-        SuccessView.as_view(),
-        name="success"
+        "walk-success/",
+        SuccessWalkView.as_view(),
+        name="success-walk"
     ),
     path(
         "success-registration/",

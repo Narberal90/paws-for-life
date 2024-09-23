@@ -7,10 +7,14 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
 
-from shelter.forms import WalkScheduleForm, AdoptionForm, UserProfileForm
-from shelter.models import Walk, Adoption, User
-from .forms import CustomUserCreationForm, CustomAuthenticationForm
-from .models import Animal
+from .forms import (
+    CustomUserCreationForm,
+    CustomAuthenticationForm,
+    WalkScheduleForm,
+    AdoptionForm,
+    UserProfileForm
+)
+from .models import Walk, Adoption, User, Animal
 
 
 class HomePageView(generic.TemplateView):
@@ -98,11 +102,11 @@ class ScheduleWalkView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("shelter:success")
+        return reverse("shelter:success-walk")
 
 
-class SuccessView(generic.TemplateView):
-    template_name = "shelter/success.html"
+class SuccessWalkView(generic.TemplateView):
+    template_name = "shelter/success_walk.html"
 
 
 class AnimalAdoptableDetailView(generic.DetailView):
