@@ -37,10 +37,6 @@ class HomePageView(generic.TemplateView):
         return context
 
 
-def help_list(request: HttpRequest) -> HttpResponse:
-    return render(request, "shelter/help_list.html")
-
-
 class AnimalListView(generic.ListView):
     model = Animal
     template_name = "shelter/animals_list_for_adoption.html"
@@ -199,7 +195,7 @@ class SuccessRegistrationView(generic.TemplateView):
 # profile
 
 class UserProfileView(LoginRequiredMixin, generic.TemplateView):
-    template_name = "shelter/user_profile.html"
+    template_name = "registration/user_profile.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -210,7 +206,7 @@ class UserProfileView(LoginRequiredMixin, generic.TemplateView):
 class EditProfileView(LoginRequiredMixin, generic.UpdateView):
     model = User
     form_class = UserProfileForm
-    template_name = "shelter/edit_profile.html"
+    template_name = "registration/edit_profile.html"
 
     def get_object(self, queryset=None):
         return self.request.user
@@ -225,23 +221,27 @@ class EditProfileView(LoginRequiredMixin, generic.UpdateView):
 def article_about_cat(request: HttpRequest) -> HttpResponse:
     return render(
         request,
-        "shelter/article_about_cats.html"
+        "shelter/articles/article_about_cats.html"
     )
 
 
 def article_about_dogs(request: HttpRequest) -> HttpResponse:
     return render(
         request,
-        "shelter/article_about_dogs.html"
+        "shelter/articles/article_about_dogs.html"
     )
 
 
 def article_about_injured_animals(request: HttpRequest) -> HttpResponse:
     return render(
         request,
-        "shelter/article_about_injured_animals.html"
+        "shelter/articles/article_about_injured_animals.html"
     )
 
 
 class AboutUsView(generic.TemplateView):
-    template_name = "shelter/about_us.html"
+    template_name = "shelter/articles/about_us.html"
+
+
+def help_list(request: HttpRequest) -> HttpResponse:
+    return render(request, "shelter/articles/help_list.html")
