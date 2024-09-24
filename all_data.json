@@ -1,0 +1,574 @@
+[
+  {
+    "model": "shelter.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$vepUTzTO9yLf2R6rByxqWd$t69iQC1A1OoWHMHo9Far+Mqyg3Nx3zMTPBIh4688gP4=",
+      "last_login": "2024-09-24T13:43:43.475Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Narberall",
+      "last_name": "Gamma",
+      "email": "admin@admin.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-09-21T19:03:00Z",
+      "phone_number": "+380450000000",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "shelter.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$NFigXSghEmkLtusPvHA6Bx$Hz4jC3QjFgaMi17q/rGZBnTfFRXYiDtQxpd2uV7L4K4=",
+      "last_login": "2024-09-24T13:38:38.228Z",
+      "is_superuser": false,
+      "username": "Test",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-22T16:30:16Z",
+      "phone_number": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 1,
+    "fields": {
+      "date": "2024-09-21T12:06:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 17
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 2,
+    "fields": {
+      "date": "2024-09-22T16:41:29Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 11
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 3,
+    "fields": {
+      "date": "2024-09-22T13:45:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 3
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 4,
+    "fields": {
+      "date": "2024-09-22T10:47:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 3
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 5,
+    "fields": {
+      "date": "2024-09-22T10:48:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 3
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 7,
+    "fields": {
+      "date": "2024-09-23T16:07:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 10
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 8,
+    "fields": {
+      "date": "2024-09-23T16:44:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 10
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 10,
+    "fields": {
+      "date": "2024-09-24T15:24:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 2
+    }
+  },
+  {
+    "model": "shelter.walk",
+    "pk": 11,
+    "fields": {
+      "date": "2024-09-24T14:42:00Z",
+      "description": "unknown",
+      "user": 1,
+      "animal": 1
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 1,
+    "fields": {
+      "name": "Rocky",
+      "age": 4,
+      "type": "dog",
+      "gender": "boy",
+      "description": "Rocky is a friendly and energetic Labrador who loves to play fetch and go for long walks. He has a shiny black coat and a heartwarming personality, making him the perfect companion for active families.",
+      "status": "available",
+      "admission_date": "2024-01-01T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034708/os4xm4rqnxgvjemdkcf7.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 2,
+    "fields": {
+      "name": "Max",
+      "age": 3,
+      "type": "dog",
+      "gender": "boy",
+      "description": "a loyal and intelligent German Shepherd who thrives on mental and physical challenges. He loves to learn new tricks and would excel in obedience training. Max is looking for an active owner who can keep him engaged.",
+      "status": "available",
+      "admission_date": "2024-01-02T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034743/qtwgboh4vlrievfe44oi.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 3,
+    "fields": {
+      "name": "Daisy",
+      "age": 5,
+      "type": "dog",
+      "gender": "boy",
+      "description": "a playful Beagle with a curious spirit. She loves to explore her surroundings and is always up for an adventure. Daisy is friendly and gets along well with children and other pets.",
+      "status": "available",
+      "admission_date": "2024-01-03T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034755/odwgubfxqni33jvme0h7.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 4,
+    "fields": {
+      "name": "Cooper",
+      "age": 2,
+      "type": "dog",
+      "gender": "boy",
+      "description": "a calm and laid-back Bulldog who enjoys lounging around and getting belly rubs. He has a charming wrinkled face and a sweet demeanor. Cooper would thrive in a relaxed home where he can be pampered.",
+      "status": "available",
+      "admission_date": "2024-01-04T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034779/wyzhk6uyv3bjp24dxuuz.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 5,
+    "fields": {
+      "name": "Lucy",
+      "age": 1,
+      "type": "dog",
+      "gender": "girl",
+      "description": "a spunky Dachshund with a big personality. She loves to chase after toys and snuggle with her favorite humans. Lucy is looking for a loving family who will appreciate her unique charm.",
+      "status": "available",
+      "admission_date": "2024-01-05T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034791/vigukuwvkhwoy43w8cmf.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 6,
+    "fields": {
+      "name": "Charlie",
+      "age": 6,
+      "type": "dog",
+      "gender": "girl",
+      "description": "a smart and playful Poodle who enjoys learning new tricks and playing fetch. His hypoallergenic coat makes him a great choice for families with allergies. Charlie is ready to find his forever home.",
+      "status": "available",
+      "admission_date": "2024-01-06T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034802/nyufknkdeitybdxtmgzn.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 7,
+    "fields": {
+      "name": "Sadie",
+      "age": 3,
+      "type": "dog",
+      "gender": "boy",
+      "description": "a gentle giant with a loving heart. This Rottweiler loves to be around people and is known for her affectionate nature. Sadie is looking for an experienced owner who can provide her with the love and guidance she needs.",
+      "status": "available",
+      "admission_date": "2024-01-07T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034818/oyewb3hgnnvx7yc1za4u.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 8,
+    "fields": {
+      "name": "Toby",
+      "age": 4,
+      "type": "dog",
+      "gender": "boy",
+      "description": "a sweet Cocker Spaniel with a friendly disposition. He enjoys going for walks and cuddling with his humans. Toby is looking for a cozy home where he can feel loved and secure.",
+      "status": "available",
+      "admission_date": "2024-01-08T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034829/zctntguncfskjyvobrxg.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 9,
+    "fields": {
+      "name": "Luna",
+      "age": 2,
+      "type": "dog",
+      "gender": "girl",
+      "description": "Luna is an energetic Border Collie who loves to run and play. She thrives on physical activity and mental stimulation. Luna is looking for an active family who can keep up with her adventurous spirit.",
+      "status": "available",
+      "admission_date": "2024-01-09T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034840/ymorgeqactuuw4q8zx1w.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 10,
+    "fields": {
+      "name": "Bella",
+      "age": 3,
+      "type": "dog",
+      "gender": "girl",
+      "description": "a gentle and affectionate Golden Retriever who enjoys cuddling on the couch and playing in the yard. Her beautiful golden fur and loving nature make her a wonderful addition to any home.",
+      "status": "available",
+      "admission_date": "2024-01-10T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727034916/e7sasinhsfqruvlw4aun.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 11,
+    "fields": {
+      "name": "Whiskers",
+      "age": 3,
+      "type": "cat",
+      "gender": "boy",
+      "description": "Playful and affectionate cat who loves to chase after feather toys and curl up on your lap for a cozy nap. He has striking green eyes and a charming personality that will win your heart.",
+      "status": "adopted",
+      "admission_date": "2024-01-11T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035157/xersrlymbpysrfsuhmya.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 12,
+    "fields": {
+      "name": "Bella",
+      "age": 2,
+      "type": "cat",
+      "gender": "girl",
+      "description": "stunning Siamese with a soft coat and beautiful blue eyes. She enjoys quiet moments by the window, watching the world go by, and is looking for a loving home where she can feel safe and cherished.",
+      "status": "available",
+      "admission_date": "2024-01-12T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035167/mvlbabpfwqog4gztwehb.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 13,
+    "fields": {
+      "name": "Luna",
+      "age": 4,
+      "type": "cat",
+      "gender": "girl",
+      "description": "a calm and regal cat who loves to lounge around and observe her surroundings. She has a thick, plush coat and a sweet disposition. Luna would thrive in a quiet home where she can relax and be pampered.",
+      "status": "pending",
+      "admission_date": "2024-01-13T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035177/pt0bwftxnncwdni8mrjq.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 14,
+    "fields": {
+      "name": "Oliver",
+      "age": 5,
+      "type": "cat",
+      "gender": "boy",
+      "description": "charming tabby cat with a playful spirit. He loves interactive toys and is always up for an adventure. His friendly nature makes him a great addition to any home, and he gets along well with other pets.",
+      "status": "adopted",
+      "admission_date": "2024-01-14T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035188/ydllf9vpmnjwhzjzcfba.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 15,
+    "fields": {
+      "name": "Daisy",
+      "age": 1,
+      "type": "cat",
+      "gender": "girl",
+      "description": "soft and cuddly Ragdoll who melts into your arms when you pick her up. She enjoys being around people and is known for her gentle and loving personality. Daisy is looking for a forever home where she can feel loved.",
+      "status": "adopted",
+      "admission_date": "2024-01-15T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035197/akktboi7pf95rx7seat8.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 16,
+    "fields": {
+      "name": "Simba",
+      "age": 3,
+      "type": "cat",
+      "gender": "boy",
+      "description": "stunning Bengal cat with a striking coat and energetic personality. He loves to play and is very active, so he needs a home where he can get plenty of exercise and mental stimulation.",
+      "status": "available",
+      "admission_date": "2024-01-16T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035207/iuv3lm5yrgnmwyrdfyuh.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 17,
+    "fields": {
+      "name": "Cleo",
+      "age": 2,
+      "type": "cat",
+      "gender": "boy",
+      "description": "fluffy Persian with an elegant demeanor. She enjoys grooming herself and lounging in sunny spots. Cleo is looking for a loving family who will appreciate her beauty and give her all the attention she deserves.",
+      "status": "available",
+      "admission_date": "2024-01-17T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035218/fjf6g4cxt0injm51zee4.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 18,
+    "fields": {
+      "name": "Charlie",
+      "age": 4,
+      "type": "cat",
+      "gender": "boy",
+      "description": "playful and curious cat who loves to explore every corner of his environment. His long, soft fur makes him irresistible, and he enjoys being around people, making him a perfect companion for any cat lover.",
+      "status": "available",
+      "admission_date": "2024-01-18T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035228/jfbji6p4jtyacfiuksa3.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 19,
+    "fields": {
+      "name": "Trixie",
+      "age": 3,
+      "type": "cat",
+      "gender": "girl",
+      "description": "sweet and affectionate cat who thrives on companionship. She loves to sit on your lap and purr contentedly. Trixie is looking for a home where she can share her love and warmth with her new family.",
+      "status": "adopted",
+      "admission_date": "2024-01-19T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035238/ctzg0rnbkjzdvbgaxfhk.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 20,
+    "fields": {
+      "name": "Max",
+      "age": 2,
+      "type": "cat",
+      "gender": "boy",
+      "description": "Meet Max, the gentle giant! This Maine Coon loves to explore and play, but also enjoys being petted and cuddled. His fluffy fur and friendly demeanor make him an ideal companion for families and individuals alike.",
+      "status": "available",
+      "admission_date": "2024-01-20T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727035247/nu0ymxnuvf8bgzh9upep.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 21,
+    "fields": {
+      "name": "Sebastian",
+      "age": 5,
+      "type": "others",
+      "gender": "boy",
+      "description": "Spirit is a gentle and strong Quarter Horse with a beautiful chestnut coat. He loves to run and graze in the pasture.",
+      "status": "available",
+      "admission_date": "2024-01-21T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727106336/rmjc4hnjl1uyfq5nihdh.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 22,
+    "fields": {
+      "name": "Tweety",
+      "age": 1,
+      "type": "others",
+      "gender": "girl",
+      "description": "Tweety is a cheerful and vibrant canary who loves to sing and brighten up the room with his beautiful melodies.",
+      "status": "available",
+      "admission_date": "2024-01-22T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727037130/ocsehhcwojnzg1ywbeat.jpg"
+    }
+  },
+  {
+    "model": "shelter.animal",
+    "pk": 23,
+    "fields": {
+      "name": "Coco",
+      "age": 2,
+      "type": "others",
+      "gender": "boy",
+      "description": "Coco is a playful and colorful budgerigar with a friendly personality.",
+      "status": "available",
+      "admission_date": "2024-01-23T00:00:00Z",
+      "walk": null,
+      "image": "image/upload/v1727037141/ddnskiuzjgijv1clzxz4.jpg"
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 1,
+    "fields": {
+      "animal": 11,
+      "user": 1,
+      "adoption_date": "2024-09-21T19:37:14.813Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 3,
+    "fields": {
+      "animal": 18,
+      "user": 1,
+      "adoption_date": "2024-09-21T20:47:02.719Z",
+      "status": "approved",
+      "notes": "��������"
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 5,
+    "fields": {
+      "animal": 17,
+      "user": 1,
+      "adoption_date": "2024-09-22T14:58:14.989Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 6,
+    "fields": {
+      "animal": 15,
+      "user": 1,
+      "adoption_date": "2024-09-22T15:22:02.243Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 7,
+    "fields": {
+      "animal": 12,
+      "user": 1,
+      "adoption_date": "2024-09-22T20:11:46.951Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 8,
+    "fields": {
+      "animal": 16,
+      "user": 1,
+      "adoption_date": "2024-09-22T20:35:51.408Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 9,
+    "fields": {
+      "animal": 14,
+      "user": 1,
+      "adoption_date": "2024-09-22T20:40:49.105Z",
+      "status": "approved",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 10,
+    "fields": {
+      "animal": 19,
+      "user": 1,
+      "adoption_date": "2024-09-22T20:40:55.385Z",
+      "status": "rejected",
+      "notes": ""
+    }
+  },
+  {
+    "model": "shelter.adoption",
+    "pk": 11,
+    "fields": {
+      "animal": 13,
+      "user": 1,
+      "adoption_date": "2024-09-22T21:37:07.984Z",
+      "status": "pending",
+      "notes": ""
+    }
+  }
+]

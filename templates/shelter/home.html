@@ -26,64 +26,44 @@
       </div>
     </div>
   </div>
-
   <main>
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
       <div class="row">
-
         <div class="col-lg-4">
           <div class="avatar-container">
             <img src="{% static 'images/pexels-lina-1741205.jpg' %}" alt="Your description" class="rounded-circle"
                  width="200"
                  height="200">
           </div>
-
           <h2>Cats</h2>
           <p>How to care for cats, proper nutrition and more</p>
           <br>
           <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-cats' %}">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-
+        </div>
         <div class="col-lg-4">
           <div class="avatar-container">
             <img src="{% static 'images/pexels-katlovessteve-551628.jpg' %}" alt="Your description"
                  class="rounded-circle" width="200"
                  height="200">
           </div>
-
           <h2>Dogs</h2>
           <p>Discover the secrets to a healthy life for your pet, Learn how to raise a happy friend</p>
           <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-dogs' %}">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-
+        </div>
         <div class="col-lg-4">
           <div class="avatar-container">
             <img src="{% static 'images/pexels-ifaw-5486963.jpg' %}" alt="Your description"
                  class="rounded-circle" width="200"
                  height="200">
           </div>
-
           <h2>Important</h2>
           <br>
           <p>What to Do When You Find an Injured Animal</p>
           <p><a class="btn btn-secondary" href="{% url 'shelter:article-about-injured-animals' %}">View details »</a>
           </p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
+        </div>
+      </div>
       <hr class="featurette-divider">
-
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Who we are? <span
@@ -98,9 +78,7 @@
                width="500" height="500">
         </div>
       </div>
-
       <hr class="featurette-divider">
-
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Providing shelter to those who have been left without a home and care <span
@@ -113,25 +91,14 @@
                alt="Your image description"
                class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
                width="500" height="500">
-
         </div>
       </div>
-
       <hr class="featurette-divider">
-
-
       <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
-
-
-    <!-- FOOTER -->
+    </div>
     <footer class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
       <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
   </main>
-  
 {% endblock %}
