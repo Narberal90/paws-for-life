@@ -5,8 +5,10 @@ click==8.1.7
 cloudinary==1.41.0
 colorama==0.4.6
 Django==5.1.1
+django-debug-toolbar==4.4.6
 django-phonenumber-field==8.0.0
 flake8==7.1.1
+gunicorn==23.0.0
 h11==0.14.0
 iniconfig==2.0.0
 jmespath==1.0.1
