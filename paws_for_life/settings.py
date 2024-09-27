@@ -156,9 +156,8 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
 
 # Cloudinary - Django - integration
-
 cloudinary.config(
-    cloud_name="dify863hs",
-    api_key="522328199251598",
-    api_secret="vFGnmi_O2zCZdV0FNuaxCaolG2o",
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET")
 )
