@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: rgba(220, 236, 247, 0.35);
+    cursor: url("/static/cat_paw_print2.png"), auto;
+}
+
+
+.background-div {
+    background: url("/static/images/pexels-rdne-5531319.jpg") left center no-repeat fixed;
+    background-size: cover;
+    height: 820px;
+    width: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+

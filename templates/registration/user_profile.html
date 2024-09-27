@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1>User Profile</h1>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>First Name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    <p><strong>Phone Number:</strong> {{ user.phone_number }}</p>
+    <a href="{% url 'shelter:edit-profile' %}" class="btn btn-secondary">Edit Profile</a>
+  </div>
+{% endblock %}

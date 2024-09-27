@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container text-center">
+    <h1>Congratulations!</h1>
+    <p>Your adoption request has been submitted successfully.</p>
+    <p>Thank you for choosing to give a loving home to an animal in need!</p>
+
+    <div class="mt-4">
+      <h3>What happens next?</h3>
+      <ul class="list-unstyled">
+        <li>1. Our team will review your application.</li>
+        <li>2. We will call you as soon as possible.</li>
+        <li>3. We will contact you to discuss the next steps.</li>
+      </ul>
+    </div>
+    <div class="mt-4">
+      <a href="{% url 'shelter:home' %}" class="btn btn-primary">Return to Home</a>
+      <a href="{% url 'shelter:animals-list-for-adoption' %}" class="btn btn-secondary">View More Animals</a>
+    </div>
+  </div>
+{% endblock %}

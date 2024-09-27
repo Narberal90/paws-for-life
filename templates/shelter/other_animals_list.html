@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container my-5">
+    <div class="row">
+      {% for animal in other_animal_list %}
+        <div class="col-12 mb-5">
+          <div class="card h-100" style="border: none;">
+            <img class="card-img-top img-fluid" src="{{ animal.image.url }}" alt="{{ animal.name }}"
+                 style="object-fit: cover;">
+            <p class="card-title" style="font-size: 24px;text-align: center">{{ animal.name }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  <div class="container">
+    <br>
+      <form method="get" class="mb-4">
+      <div class="row">
+        <div class="col-md-4">
+          <select name="gender" class="form-control">
+            <option value="">Select Gender</option>
+            <option value="boy">Boy</option>
+            <option value="girl">Girl</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="age" class="form-control" placeholder="Age">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-info mt-3">Search for animals</button>
+    </form>
+    <div class="row">
+      {% for dog in object_list %}
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="card mb-4">
+            <a href="{% url 'shelter:schedule-walk' dog_pk=dog.id %}">
+              <img class="card-img-top" src="{{ dog.image.url|default:'https://via.placeholder.com/150' }}"
+                   alt="{{ dog.name }}">
+              <div class="card-body">
+                <h2 class="h4 card-title">{{ dog.name }}</h2>
+                <h4 class="card-text text-muted">{{ dog.get_gender_display }} / {{ dog.age }}
+                  year{{ dog.age|pluralize }}</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% include 'includes/pagination.html' %}
+{% endblock %}

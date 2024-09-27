@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+      .attribute {
+          display: flex;
+          justify-content: space-between;
+      }
+  </style>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{ animal.image.url }}" alt="Animal photo" class="img-fluid">
+      </div>
+      <div class="col-md-8">
+        <h2>{{ animal.name }}</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item attribute"><strong>Type:</strong> <span>{{ animal.get_type_display }}</span></li>
+          <li class="list-group-item attribute"><strong>Age:</strong> <span>{{ animal.age }} years</span></li>
+          <li class="list-group-item attribute"><strong>Gender:</strong> <span>{{ animal.gender }}</span></li>
+          <li class="list-group-item attribute"><strong>Description:</strong> <span>&nbsp;{{ animal.description }}</span></li>
+        </ul>
+        <div class="mt-4">
+          <a href="{% url 'shelter:adoption-create' animal_pk=animal.id %}" class="btn btn-primary">Adopt Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
