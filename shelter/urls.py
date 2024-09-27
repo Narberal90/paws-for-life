@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import (
+from shelter.views import (
     HomePageView,
     help_list,
     AnimalListView,

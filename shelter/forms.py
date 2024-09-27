@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from phonenumber_field.formfields import PhoneNumberField
 
-from .models import Walk, Adoption
+from shelter.models import Walk, Adoption
 
 
 class WalkScheduleForm(forms.ModelForm):

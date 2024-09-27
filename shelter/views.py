@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
 
-from .forms import (
+from shelter.forms import (
     CustomUserCreationForm,
     CustomAuthenticationForm,
     WalkScheduleForm,
